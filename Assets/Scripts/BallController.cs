@@ -13,7 +13,6 @@ public class BallController : MonoBehaviour
     {
         //Grabbing a reference to RigidBody
         ballRB = GetComponent<Rigidbody>();
-
         // Add a listener to the OnSpacePressed event.
         // When the space key is pressed the
         // LaunchBall method will be called.
