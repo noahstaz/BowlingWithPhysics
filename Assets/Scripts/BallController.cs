@@ -20,6 +20,7 @@ public class BallController : MonoBehaviour
         inputManager.OnSpacePressed.AddListener(LaunchBall);
         transform.parent = ballAnchor;
         transform.localPosition = Vector3.zero;
+        ballRB.isKinematic = true;
     }
 
     private void LaunchBall()
@@ -30,6 +31,7 @@ public class BallController : MonoBehaviour
         // "now that the ball is not launched, set it to true and launch the ball"
         isBallLaunched = true;
         transform.parent = null;
+        ballRB.isKinematic = false;
         // this sets the object to the outermost layer of the hierarchy
         ballRB.AddForce(transform.forward * force, ForceMode.Impulse);
     }
